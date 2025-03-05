@@ -1,0 +1,14 @@
+{
+    "name": "pack-cli",
+    "id": "pack-cli",
+    "version": "1.0.0",
+    "description": "A feature adding the pack CLI",
+    "options": {
+        "pack_version": {
+            "type": "string",
+            "description": "pack version to install",
+            "proposals": ["0.36.4"],
+            "default": "0.36.4"
+        }
+    }
+}
