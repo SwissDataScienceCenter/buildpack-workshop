@@ -1,3 +1,7 @@
 #!/usr/bin/env bash
 
-exit 0
+set -eo pipefail
+
+if [[ ! -f package.json ]]; then
+   exit 100
+fi

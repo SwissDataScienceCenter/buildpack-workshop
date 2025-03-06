@@ -12,7 +12,7 @@ const server = http.createServer((req, res) => {
 // For demo purposes we do not actually start the server.  This
 // allows us pretend to start the server and check if the output
 // message is correct.
-//server.listen(port, hostname, () => {
-//  console.log(`Server running at http://${hostname}:${port}/`);
-//});
-console.log(`Server running at http://${hostname}:${port}/`);
+server.listen(port, hostname, () => {
+ console.log(`Server running at http://${hostname}:${port}/`);
+});
+// console.log(`Server running at http://${hostname}:${port}/`);
