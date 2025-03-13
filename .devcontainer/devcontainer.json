@@ -12,13 +12,13 @@
 		"./pack-cli": {}
 	},
 
-	"postCreateCommand": "pack config default-builder cnbs/sample-builder:noble && pack config trusted-builders add cnbs/sample-builder:noble",
-
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
 
+	"appPort": [8080, 8000],
+
 	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "uname -a",
+	"postCreateCommand": "make configure",
 
 	// Configure tool-specific properties.
 	// "customizations": {},
