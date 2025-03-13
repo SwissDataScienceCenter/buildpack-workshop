@@ -10,7 +10,9 @@
 		"ghcr.io/devcontainers/features/node:1": {},
 		"ghcr.io/devcontainers/features/docker-in-docker:2": {},
 		"./pack-cli": {}
-	}
+	},
+
+	"postCreateCommand": "pack config default-builder cnbs/sample-builder:noble && pack config trusted-builders add cnbs/sample-builder:noble",
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
