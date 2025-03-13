@@ -2,6 +2,8 @@
 
 Repository created by following: https://buildpacks.io/docs/for-buildpack-authors/tutorials/basic-buildpack/01_setup-local-environment/.
 
+Forked from: https://gitlab.com/leafty/buildpacks-tutorial
+
 ## Basic commands
 
 1. Add the builder image to use `make configure` (not needed in devcontainer)
@@ -28,7 +30,7 @@ variables that Renku injects into the session when the session is created.
 There are:
 
 - `RENKU_BASE_URL`: the full URL that you can use to navigate to the session
-- `RENKU_BASE_URL_PATH`: just the path from the `BASE_URL`
+- `RENKU_BASE_URL_PATH`: just the path from the `RENKU_BASE_URL`
 - `RENKU_MOUNT_DIR`: the directory where the volume for the session is mounted
 - `RENKU_SESSION`: set to `1` if inside a renku session
 - `RENKU_SESSION_IP`: the IP the server should listen on (i.e. `0.0.0.0`)
