@@ -44,3 +44,6 @@ There are:
 Once you have build the image with the `make build` or `make build_with_ui` command, you can log into docker with `docker login` and re-tag and push the image.
 
 Finally, you can create a session launcher in Renku. You should be able to omit the command and arguments from the session launcher configuration.
+
+Example Renku project with a custom session launcher from the image created by running `make build_with_ui`.
+https://renkulab.io/v2/projects/tasko.olevski/cloud-native-buildpack-workshop
