@@ -12,7 +12,7 @@ build: ## Build the image with the custom buildpack
 
 .PHONY:build_with_ui
 build_with_ui: ## Build the image with the custom buildpack and the vscode buildpack
-	pack build test-node-js-app-with-ui --clear-cache --path ./node-js-sample-app --buildpack ./node-js-buildpack --buildpack ghcr.io/swissdatasciencecenter/vscodium-buildpack/vscodium:0.1.1
+	pack build test-node-js-app-with-ui --clear-cache --path ./node-js-sample-app --buildpack ./node-js-buildpack --buildpack ghcr.io/swissdatasciencecenter/vscodium-buildpack/vscodium:0.1.2
 
 .PHONY:run
 run: build ## Run the image with your custom buildpack
