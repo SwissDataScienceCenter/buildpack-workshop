@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+
+set -eo pipefail
+
+echo "---> Renku/Python/Dash Buildpack"
+
+# 1. CREATE THE LAYER DIRECTORY
+py_dash_layer="${CNB_LAYERS_DIR}"/py-dash
+mkdir -p "${py_dash_layer}"
+
+# 2. SET DEFAULT START COMMAND
+cat > "${CNB_LAYERS_DIR}/launch.toml" << EOL
+[[processes]]
+type = "web"
+command = ["python", "app.py"]
+default = true
+EOL
+
+
+# # 2. DOWNLOAD node-js
+# node_js_version="18.18.1"
+# node_js_url=https://nodejs.org/dist/v${node_js_version}/node-v${node_js_version}-linux-x64.tar.xz
+# cached_nodejs_version=$(cat "${CNB_LAYERS_DIR}/node-js.toml" 2> /dev/null | yj -t | jq -r .metadata.nodejs_version 2>/dev/null || echo 'NOT FOUND')
+# if [[ "${node_js_url}" != *"${cached_nodejs_version}"* ]] ; then
+#     echo "-----> Downloading and extracting NodeJS"
+#     wget -q -O - "${node_js_url}" | tar -xJf - --strip-components 1 -C "${node_js_layer}"
+# else
+#     echo "-----> Reusing NodeJS"
+# fi
+
+# # 3. MAKE node-js AVAILABLE DURING LAUNCH and CACHE the LAYER
+# cat > "${CNB_LAYERS_DIR}/node-js.toml" << EOL
+# [types]
+# cache = true
+# launch = true
+# [metadata]
+# nodejs_version = "${node_js_version}"
+# EOL
+
+# # 4. SET DEFAULT START COMMAND
+# cat > "${CNB_LAYERS_DIR}/launch.toml" << EOL
+# [[processes]]
+# type = "web"
+# command = ["node", "app.js"]
+# default = true
+# EOL
